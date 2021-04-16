@@ -1,0 +1,109 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body {
+    min-height: 100vh;
+}
+h1 {
+    margin-top: 40px;
+    font-size: 40px;
+    text-align: center;
+}
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.input {
+    width: 60%;
+}
+.plus_btn {
+    cursor: pointer;
+    margin-top: 40px;
+}
+.book_shelf {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px auto 0;
+    width: 85%;
+    gap: 5px;
+}
+.book {
+    min-width: 200px;
+    width: 200px;
+    min-height: 300px;
+    border: 1px solid #000;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+}
+.book_name {
+    font-size: 24px;
+}
+.book_author {
+    font-size: 16px;
+}
+.book_pages {
+    font-size: 14px;
+}
+.book_buttons button {
+    font-size: 16px;
+    padding: 5px 10px;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+    margin-left: 10px;
+    border: 1px solid black;
+    color: black;
+    transition: background-color .2s;
+}
+.book_buttons button:hover,
+.modal_submit:hover {
+    background: #000;
+    color: white;
+}
+.modal {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+}
+.modal_window {
+    position: relative;
+    padding: 24px 44px 34px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    border: 1px solid #000;
+    background: #fff;
+}
+.modal_window input,
+.modal_window label {
+    margin-top: 10px;
+}
+.modal_submit {
+    margin-top: 15px;
+    width: 100%;
+    border: 1px solid black;
+    outline: none;
+    background: #fff;
+    padding: 8px 0;
+    cursor: pointer;
+    transition: background-color .2s;
+}
+.modal_close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}

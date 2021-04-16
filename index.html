@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>The Library</title>
+</head>
+<body>
+    <section class="header">
+        <h1>The Library</h1>
+        <div class="plus_btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"/></svg>
+        </div>
+    </section>
+    <section class="book_shelf">
+        <div class="book">
+            <div class="book_name">Lord Of The Rings</div>
+            <div class="book_author">By J.R.R. Talkien</div>
+            <div class="book_pages">Pages: 479</div>
+            <div class="book_buttons">
+                <button class="book_read">Read</button>
+                <button class="book_remove">Remove</button>
+            </div>
+        </div>
+        <!-- <div class="book">
+            <div class="book_name">Catch 22</div>
+            <div class="book_author">By Joseph Heller</div>
+            <div class="book_pages">Pages: 453</div>
+            <div class="book_buttons">
+                <button class="book_read">Read</button>
+                <button class="book_remove">Remove</button>
+            </div>
+        </div> -->
+    </section>
+    <div class="modal">
+        <div class="modal_window">
+            <svg class="modal_close" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M12 0c6.623 0 12 5.377 12 12s-5.377 12-12 12-12-5.377-12-12 5.377-12 12-12zm0 1c6.071 0 11 4.929 11 11s-4.929 11-11 11-11-4.929-11-11 4.929-11 11-11zm0 10.293l5.293-5.293.707.707-5.293 5.293 5.293 5.293-.707.707-5.293-5.293-5.293 5.293-.707-.707 5.293-5.293-5.293-5.293.707-.707 5.293 5.293z"/></svg>
+            <label for="name">Book name</label>
+            <input id="name" name="name" type="text">
+            <label for="author">Author</label>
+            <input id="author" name="author" type="text">
+            <label for="pages">Number of pages</label>
+            <input id="pages" name="pages" type="number" placeholder="0" min="1" max="9999">
+            <label for="read">Read?</label>
+            <input id="read" name="read" type="checkbox" value="read">
+            <input id="submit" type="button" class="modal_submit" value="Submit"></input>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
