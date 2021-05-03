@@ -35,7 +35,14 @@ function checkClick(event) {
   modalWindow.contains(event.target) ? null : closeModal()
 }
 
-let myLibrary = []
+let myLibrary = [
+{
+	title: 'Lord Of The Rings', 
+	author: 'J.R.R. Tolkien',
+	pages: 479,
+	read: true
+}
+]
 
 function Book(title, author, pages, read) {
   this.title = title
@@ -58,6 +65,7 @@ function addBookToLibrary() {
   newBook.querySelector('.book_pages').innerHTML = `Pages: ${book.pages}`
   newBook.querySelector('.book_read').innerHTML = `Read: ${book.read ? 'Yes' : 'No'}`
   newBook.querySelector('.book_read_btn').innerHTML = book.read ? 'Unread' : 'Read'
+  newBook.style.display = 'flex'
   myLibrary.push(book)
   myLibrary.forEach(item => {item.data = item.data ?? data})
   data++
@@ -75,7 +83,9 @@ function removeBook() {
     item.onclick = function() {
       this.parentNode.parentNode.remove()
       for (let i = 0; i < myLibrary.length; i++) {
-        if (myLibrary[i].data === parseInt(this.parentNode.parentNode.getAttribute('data'))) { myLibrary.splice(i, 1) }
+        if (myLibrary[i].data === parseInt(this.parentNode.parentNode.getAttribute('data'))) {
+        	myLibrary.splice(i, 1) 
+        }
       }
       saveLocally()
     }
@@ -111,7 +121,15 @@ function saveLocally() {
 
 function restoreLocally() {
   myLibrary = JSON.parse(localStorage.getItem('myLibrary'))
-  if (myLibrary === null) myLibrary = []
+  if (myLibrary === null) myLibrary =  [
+		{
+			title: 'Lord Of The Rings', 
+			author: 'J.R.R. Tolkien',
+			pages: 479,
+			read: true,
+			data: 0
+		}
+	]
   if (myLibrary.length > 0) {
     data = myLibrary[myLibrary.length - 1].data + 1
   } else { data = 0 }
@@ -123,6 +141,7 @@ function restoreLocally() {
     newBook.querySelector('.book_pages').innerHTML = `Pages: ${item.pages}`
     newBook.querySelector('.book_read').innerHTML = `Read: ${item.read ? 'Yes' : 'No'}`
     newBook.querySelector('.book_read_btn').innerHTML = item.read ? 'Unread' : 'Read'
+    newBook.style.display = 'flex'
     myLibrary.forEach(item => {item.data = item.data ?? data++})
     bookShelf.appendChild(newBook)
     removeButtons = document.querySelectorAll('.book_remove')
