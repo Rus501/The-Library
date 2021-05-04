@@ -44,11 +44,13 @@ let myLibrary = [
 }
 ]
 
-function Book(title, author, pages, read) {
-  this.title = title
-  this.author = author
-  this.pages = pages
-  this.read = read
+class Book{
+	constructor(title, author, pages, read) {
+		this.title = title
+		this.author = author
+		this.pages = pages
+		this.read = read		
+	}
 }
 
 function addBookToLibrary() {
@@ -67,8 +69,7 @@ function addBookToLibrary() {
   newBook.querySelector('.book_read_btn').innerHTML = book.read ? 'Unread' : 'Read'
   newBook.style.display = 'flex'
   myLibrary.push(book)
-  myLibrary.forEach(item => {item.data = item.data ?? data})
-  data++
+  myLibrary.forEach(item => {item.data = item.data ?? data++})
   bookShelf.appendChild(newBook)
   removeButtons = document.querySelectorAll('.book_remove')
   readButtons = document.querySelectorAll('.book_read_btn')
@@ -81,9 +82,10 @@ function addBookToLibrary() {
 function removeBook() {
   removeButtons.forEach(item => {
     item.onclick = function() {
-      this.parentNode.parentNode.remove()
+    	let currentBook = this.parentNode.parentNode
+      currentBook.remove()
       for (let i = 0; i < myLibrary.length; i++) {
-        if (myLibrary[i].data === parseInt(this.parentNode.parentNode.getAttribute('data'))) {
+        if (myLibrary[i].data === parseInt(currentBook.getAttribute('data'))) {
         	myLibrary.splice(i, 1) 
         }
       }
