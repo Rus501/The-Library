@@ -26,30 +26,28 @@
         <button class="book_remove">Remove</button>
       </div>
     </div>
-    <!-- <div class="book">
-      <div class="book_name">Catch 22</div>
-      <div class="book_author">By Joseph Heller</div>
-      <div class="book_pages">Pages: 453</div>
-      <div class="book_read">Read: No</div>
-      <div class="book_buttons">
-        <button class="book_read_btn">Read</button>
-        <button class="book_remove">Remove</button>
-      </div>
-    </div> -->
   </section>
   <div class="modal">
     <div class="modal_window">
       <svg class="modal_close" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M12 0c6.623 0 12 5.377 12 12s-5.377 12-12 12-12-5.377-12-12 5.377-12 12-12zm0 1c6.071 0 11 4.929 11 11s-4.929 11-11 11-11-4.929-11-11 4.929-11 11-11zm0 10.293l5.293-5.293.707.707-5.293 5.293 5.293 5.293-.707.707-5.293-5.293-5.293 5.293-.707-.707 5.293-5.293-5.293-5.293.707-.707 5.293 5.293z"/></svg>
       <form class="modal_form" onsubmit="addBookToLibrary();return false">
-        <label for="name">Book name</label>
-        <input onfocus="select()" id="name" name="name" type="text" required value="Name">
-        <label for="author">Author</label>
-        <input onclick="select()" id="author" name="author" type="text" required value="Author">
-        <label for="pages">Number of pages</label>
-        <input onclick="select()" id="pages" name="pages" type="number" value="1" min="1" max="9999" required>
-        <label for="read">Read?</label>
-        <input id="read" name="read" type="checkbox" value="read">
-        <input id="submit" type="submit" class="modal_submit" value="Submit"></input>
+        <label>
+          Book name
+          <input class="pog" name="name" required placeholder="Name">
+        </label>
+        <label>
+          Author
+          <input name="author" required placeholder="Author">
+        </label>
+        <label>
+          Number of pages
+          <input name="pages" type="number" min="1" max="999" placeholder="1-999" required>
+        </label>
+        <label>
+          Read?
+          <input name="read" type="checkbox" value="read">
+        </label>
+        <input type="submit" class="modal_submit" value="Add Book"></input>
       </form>
     </div>
   </div>
