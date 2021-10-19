@@ -19,7 +19,7 @@ function openModal() {
   body.style.overflow = 'hidden'
   modal.style.visibility = 'visible'
   // bookName.focus()
-  modal.addEventListener('click', checkClick)
+  modal.addEventListener('mousedown', checkClick)
 }
 addBook.addEventListener('click', openModal)
 
@@ -27,7 +27,7 @@ function closeModal() {
   body.style.backgroundColor = 'rgba(0, 0, 0, 0)'
   body.style.overflow = 'visible'
   modal.style.visibility = 'hidden'
-  modal.removeEventListener('click', checkClick)
+  // modal.removeEventListener('click', checkClick)
 }
 modalClose.addEventListener('click', closeModal)
 
