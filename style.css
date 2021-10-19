@@ -26,6 +26,12 @@ h1 {
   cursor: pointer;
   margin-top: 30px;
 }
+.plus_btn svg {
+  transition: transform 500ms;
+}
+.plus_btn svg:hover {
+  transform: rotateZ(90deg);
+}
 .book_shelf {
   display: flex;
   justify-content: center;
@@ -106,8 +112,8 @@ h1 {
   transition: background-color 200ms;
   pointer-events: auto;
 }
-.modal_form input:hover,
-.modal_form input:focus {
+.modal_form input:not(input[type="submit"]):hover,
+.modal_form input:not(input[type="submit"]):focus {
   background-color: rgba(235, 235, 235, 0.9);
 }
 .modal_form input:focus:invalid {
